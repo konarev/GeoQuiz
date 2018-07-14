@@ -9,6 +9,10 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import static io.github.konarev.geoquiz.R.color.colorCoolAnswer;
+import static io.github.konarev.geoquiz.R.color.colorFailAnswer;
+import static io.github.konarev.geoquiz.R.color.colorNoAnswer;
+
 public class QuizActivity extends AppCompatActivity {
     //private LinearLayout mAnswerButtonsGroup;
     private static final String TAG = "QuizActivity";
@@ -140,14 +144,12 @@ public class QuizActivity extends AppCompatActivity {
         mAnswerButtonsGroup = (LinearLayout) findViewById(R.id.answer_buttons_group);
         if (mQuestionBank[mCurrentIndex].isAnswerExist()) {
             mAnswerButtonsGroup.setVisibility(View.GONE);
-            if (mQuestionBank[mCurrentIndex].isAnswerTrue()) {
-                mQuestionTextView.setTextColor(getResources().getColor(R.color.colorCoolAnswer));
-            } else {
-                mQuestionTextView.setTextColor(getResources().getColor(R.color.colorFailAnswer));
-            }
+            if (mQuestionBank[mCurrentIndex].isAnswerTrue())
+                mQuestionTextView.setTextColor(getResources().getColor(colorCoolAnswer));
+            else mQuestionTextView.setTextColor(getResources().getColor(colorFailAnswer));
         } else {
             mAnswerButtonsGroup.setVisibility(View.VISIBLE);
-            mQuestionTextView.setTextColor(getResources().getColor(R.color.colorNoAnswer));
+            mQuestionTextView.setTextColor(getResources().getColor(colorNoAnswer));
         }
 
     }
