@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">ГеоЭрудит</string>
+    <string name="question_text">Вопрос</string>
+    <string name="true_button">Да</string>
+    <string name="prev_button">Предыдущий</string>
+    <string name="next_button">Следующий</string>
+    <string name="false_button">Нет</string>
+    <string name="correct_toast">Правильно</string>
+    <string name="incorrect_toast">Неправильно</string>
+</resources>
